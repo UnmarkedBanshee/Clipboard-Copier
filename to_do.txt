@@ -1,0 +1,5 @@
+
+
+#if making it in a desktop app is too hard make a gui that opens with right click of the mouse
+
+#look into eel python library for desktop app development
