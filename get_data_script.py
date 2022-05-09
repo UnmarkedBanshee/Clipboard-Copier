@@ -24,21 +24,29 @@ if len(sys.argv) == 2:
 
     if command == 'save':
         key = input('Enter a key: ')
-        data[key] = clipboard.paste()
-        save_items(SAVED_DATA, data) #calling the save function and passing in the arguments
-        print('Data saved succesfully')
+        if key in data:
+            existance_key = input('That key already exists, if you continue the data there will be overridden:')
+            if existance_key.upper() or existance_key.lower == 'yes' or 'YES':
+                data[key] = clipboard.paste()
+                save_items(SAVED_DATA, data) #calling the save function and passing in the arguments
+                print('Data saved succesfully')
+            else:
+                print('{}')
+        
     elif command == 'load':
-        try:
-            key = input('What key would you like to \n access data from: ')
+        key = input('What key would you like to \n access data from: ')
+        if key in data:
             clipboard.copy(data[key])
-            print('{1} copied to clipboard'.format(data[key]))
-        #load that key from the json dict
-        #print the value of that key if it is in the dict and save it to the clipboard as the 'current copied' item
-        except:
-            print('Invaild key: No such item saved')
+            #print('{1} copied to clipboard'.format((str(data[key])))) figure out why its not printing the loaded data
+        else:
+            print('Key doesnt exist! ')
+            #load that key from the json dict
+            #print the value of that key if it is in the dict and save it to the clipboard as the 'current copied' item
     elif command == 'items':
+        #return all items saved in the dictionary as a dictionry
         pass
     elif command == 'delete':
+        #we could add functionlaity as practcie, but since saving the data to a preexisitng key already overwrites it, there is no point
         pass
     else:
         print('Invalid command')
