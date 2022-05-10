@@ -32,11 +32,16 @@ if len(sys.argv) == 2:
                 print('Data saved succesfully')
             else:
                 print('{}')
+        else:
+            data[key] = clipboard.paste()
+            save_items(SAVED_DATA, data) #calling the save function and passing in the arguments
+            print('Data saved succesfully')
         
     elif command == 'load':
         key = input('What key would you like to \n access data from: ')
         if key in data:
             clipboard.copy(data[key])
+            print('Data accessed succesfully')
             #print('{1} copied to clipboard'.format((str(data[key])))) figure out why its not printing the loaded data
         else:
             print('Key doesnt exist! ')

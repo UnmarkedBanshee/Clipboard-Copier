@@ -1,4 +1,5 @@
 # Universal-Clipboard
- Saves copied data system wide and stores it to be accessed later. Allows users to paste all previouly copied data with "paste ALT" functionality. Made with TLC
+ Saves all copied clipboard data to a persoanl storage system in the cloud
+ Make website to access data local, data is sotred and accessable to anyone on the same wifi network????
 
- #updating this readme from the mac laptop
+ #stored in the users google drive most likly the last functionlity that we will add
