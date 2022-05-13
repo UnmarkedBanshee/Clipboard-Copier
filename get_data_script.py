@@ -2,6 +2,7 @@ import clipboard
 import sys
 import json #learn the in's an out's of json
 
+
 SAVED_DATA = 'clipboard.json'
 #print(sys.argv[1:]) #this is everyhting after calling the python file in terminal like python filename {run} argv == run now becsue we cvalled run
 # 3 different allowed commands
@@ -57,3 +58,4 @@ if len(sys.argv) == 2:
         print('Invalid command')
 else:
     print('Invalid number of arguments')
+
