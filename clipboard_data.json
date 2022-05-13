@@ -1,0 +1,1 @@
+{"2": "data[key] = clipboard.paste()\r\n                save_items(SAVED_DATA, data) #calling the save function and passing in the arguments\r\n print('Data saved succesfully')", "3": "r a key", "20": "http://127.0.0.1:5000", "1": "http://127.0.0.1:5000"}

@@ -3,7 +3,7 @@ import sys
 import json #learn the in's an out's of json
 
 
-SAVED_DATA = 'clipboard.json'
+SAVED_DATA = 'clipboard_data.json'
 #print(sys.argv[1:]) #this is everyhting after calling the python file in terminal like python filename {run} argv == run now becsue we cvalled run
 # 3 different allowed commands
 
@@ -49,11 +49,14 @@ if len(sys.argv) == 2:
             #load that key from the json dict
             #print the value of that key if it is in the dict and save it to the clipboard as the 'current copied' item
     elif command == 'items':
+        print(data)
         #return all items saved in the dictionary as a dictionry
-        pass
     elif command == 'delete':
+        key = input('What key would you like to delete: ')
+        if key in data:
+            del data[key]
+            save_items(SAVED_DATA, data)
         #we could add functionlaity as practcie, but since saving the data to a preexisitng key already overwrites it, there is no point
-        pass
     else:
         print('Invalid command')
 else:
